@@ -6,6 +6,7 @@ import { Calendar } from "@/components/ui/calendar"
 
 const meta = {
   title: "Components/Forms/Calendar",
+  id: "components-calendar",
   component: Calendar,
   parameters: {
     docs: {

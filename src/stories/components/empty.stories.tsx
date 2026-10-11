@@ -13,6 +13,7 @@ import {
 
 const meta = {
   title: "Components/Feedback/Empty",
+  id: "components-empty",
   component: Empty,
   parameters: {
     docs: {

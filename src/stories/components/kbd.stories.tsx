@@ -5,6 +5,7 @@ import { Kbd, KbdGroup } from "@/components/ui/kbd"
 
 const meta = {
   title: "Components/Data Display/Kbd",
+  id: "components-kbd",
   component: Kbd,
   parameters: {
     docs: {

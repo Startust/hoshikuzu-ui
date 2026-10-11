@@ -9,6 +9,7 @@ import {
 
 const meta = {
   title: "Components/Overlays/Hover Card",
+  id: "components-hover-card",
   component: HoverCard,
   parameters: {
     docs: {

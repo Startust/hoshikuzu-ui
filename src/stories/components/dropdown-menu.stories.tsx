@@ -29,6 +29,7 @@ import {
 
 const meta = {
   title: "Components/Navigation/Dropdown Menu",
+  id: "components-dropdown-menu",
   component: DropdownMenu,
   parameters: {
     docs: {

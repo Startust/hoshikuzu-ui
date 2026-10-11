@@ -12,6 +12,7 @@ import {
 
 const meta = {
   title: "Components/Navigation/Pagination",
+  id: "components-pagination",
   component: Pagination,
   parameters: {
     docs: {

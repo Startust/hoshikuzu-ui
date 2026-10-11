@@ -14,6 +14,7 @@ import {
 
 const meta = {
   title: "Components/Data Display/Table",
+  id: "components-table",
   component: Table,
   parameters: {
     docs: {

@@ -21,6 +21,7 @@ import {
 
 const meta = {
   title: "Components/Navigation/Menubar",
+  id: "components-menubar",
   component: Menubar,
   parameters: {
     docs: {

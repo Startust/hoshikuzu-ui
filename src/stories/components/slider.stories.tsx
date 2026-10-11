@@ -6,6 +6,7 @@ import { Slider } from "@/components/ui/slider"
 
 const meta = {
   title: "Components/Forms/Slider",
+  id: "components-slider",
   component: Slider,
   parameters: {
     docs: {

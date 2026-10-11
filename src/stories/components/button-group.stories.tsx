@@ -19,6 +19,7 @@ import { Input } from "@/components/ui/input"
 
 const meta = {
   title: "Components/Actions/Button Group",
+  id: "components-button-group",
   component: ButtonGroup,
   parameters: {
     docs: {

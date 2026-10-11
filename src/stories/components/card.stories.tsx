@@ -15,6 +15,7 @@ import {
 
 const meta = {
   title: "Components/Data Display/Card",
+  id: "components-card",
   component: Card,
   parameters: {
     docs: {

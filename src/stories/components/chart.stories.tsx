@@ -21,6 +21,7 @@ import {
 
 const meta = {
   title: "Components/Data Display/Chart",
+  id: "components-chart",
   component: ChartContainer,
   parameters: {
     docs: {

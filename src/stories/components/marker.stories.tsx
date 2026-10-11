@@ -5,6 +5,7 @@ import { Marker, MarkerContent, MarkerIcon } from "@/components/ui/marker"
 
 const meta = {
   title: "Components/Conversation/Marker",
+  id: "components-marker",
   component: Marker,
   parameters: {
     docs: {

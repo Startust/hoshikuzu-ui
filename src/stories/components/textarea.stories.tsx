@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea"
 
 const meta = {
   title: "Components/Forms/Textarea",
+  id: "components-textarea",
   component: Textarea,
   parameters: {
     docs: {

@@ -5,6 +5,7 @@ import { Toggle } from "@/components/ui/toggle"
 
 const meta = {
   title: "Components/Actions/Toggle",
+  id: "components-toggle",
   component: Toggle,
   parameters: {
     docs: {

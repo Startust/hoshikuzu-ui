@@ -160,6 +160,7 @@ function StandupThread() {
 
 const meta = {
   title: "Components/Conversation/Message Scroller",
+  id: "components-message-scroller",
   component: MessageScroller,
   parameters: {
     docs: {

@@ -17,6 +17,7 @@ import {
 
 const meta = {
   title: "Components/Overlays/Sheet",
+  id: "components-sheet",
   component: Sheet,
   parameters: {
     docs: {

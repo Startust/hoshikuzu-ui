@@ -23,6 +23,7 @@ import {
 
 const meta = {
   title: "Components/Conversation/Attachment",
+  id: "components-attachment",
   component: Attachment,
   parameters: {
     docs: {

@@ -28,6 +28,7 @@ import {
 
 const meta = {
   title: "Components/Conversation/Message",
+  id: "components-message",
   component: Message,
   parameters: {
     docs: {

@@ -8,6 +8,7 @@ type ToastManager = ReturnType<typeof createToastManager>
 
 const meta = {
   title: "Components/Feedback/Toast",
+  id: "components-toast",
   component: Toaster,
   parameters: {
     docs: {

@@ -108,7 +108,11 @@ Reference implementations: `button.tsx`, `badge.tsx`, `input.tsx`, `card.tsx`,
 ## Stories
 
 - One file per component: `src/stories/components/<name>.stories.tsx`.
-- `title: "Components/<Name>"`, `component: <Root>`, `satisfies Meta<...>`.
+- `title: "Components/<Category>/<Name>"` where the category is one of
+  Actions, Forms, Overlays, Navigation, Feedback, Data Display, Layout or
+  Conversation; `id: "components-<file-name>"` so story URLs stay stable when
+  a component moves between categories; `component: <Root>`;
+  `satisfies Meta<...>`.
 - Include: a `Playground`/default story with controls where the component has
   variants, and 1–4 stories showing real atlas-flavored use (archive entries,
   meeting notes, review queues, signals, tools, star catalog). Short, calm copy.

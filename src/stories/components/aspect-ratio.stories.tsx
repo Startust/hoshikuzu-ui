@@ -4,6 +4,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio"
 
 const meta = {
   title: "Components/Layout/Aspect Ratio",
+  id: "components-aspect-ratio",
   component: AspectRatio,
   parameters: {
     docs: {

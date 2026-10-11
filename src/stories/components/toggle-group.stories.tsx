@@ -11,6 +11,7 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
 const meta = {
   title: "Components/Actions/Toggle Group",
+  id: "components-toggle-group",
   component: ToggleGroup,
   parameters: {
     docs: {

@@ -10,6 +10,7 @@ import {
 
 const meta = {
   title: "Components/Layout/Collapsible",
+  id: "components-collapsible",
   component: Collapsible,
   parameters: {
     docs: {

@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 const meta = {
   title: "Components/Layout/Direction",
+  id: "components-direction",
   component: DirectionProvider,
   parameters: {
     docs: {

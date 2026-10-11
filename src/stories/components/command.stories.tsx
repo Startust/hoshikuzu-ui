@@ -26,6 +26,7 @@ import { Kbd } from "@/components/ui/kbd"
 
 const meta = {
   title: "Components/Navigation/Command",
+  id: "components-command",
   component: Command,
   parameters: {
     docs: {

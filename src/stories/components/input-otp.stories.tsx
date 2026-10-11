@@ -12,6 +12,7 @@ import { Label } from "@/components/ui/label"
 
 const meta = {
   title: "Components/Forms/Input OTP",
+  id: "components-input-otp",
   component: InputOTP,
   parameters: {
     docs: {

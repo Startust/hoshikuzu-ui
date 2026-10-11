@@ -28,6 +28,7 @@ import { Textarea } from "@/components/ui/textarea"
 
 const meta = {
   title: "Components/Forms/Field",
+  id: "components-field",
   component: Field,
   parameters: {
     docs: {

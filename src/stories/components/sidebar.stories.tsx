@@ -253,6 +253,7 @@ function ObservatoryShell({
 
 const meta = {
   title: "Components/Navigation/Sidebar",
+  id: "components-sidebar",
   component: Sidebar,
   parameters: {
     layout: "fullscreen",

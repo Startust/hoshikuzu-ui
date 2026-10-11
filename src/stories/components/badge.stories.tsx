@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 
 const meta = {
   title: "Components/Data Display/Badge",
+  id: "components-badge",
   component: Badge,
   parameters: {
     docs: {

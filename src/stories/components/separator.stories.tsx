@@ -4,6 +4,7 @@ import { Separator } from "@/components/ui/separator"
 
 const meta = {
   title: "Components/Layout/Separator",
+  id: "components-separator",
   component: Separator,
   parameters: {
     docs: {

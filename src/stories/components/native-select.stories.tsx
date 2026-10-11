@@ -9,6 +9,7 @@ import {
 
 const meta = {
   title: "Components/Forms/Native Select",
+  id: "components-native-select",
   component: NativeSelect,
   parameters: {
     docs: {

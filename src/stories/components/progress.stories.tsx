@@ -8,6 +8,7 @@ import {
 
 const meta = {
   title: "Components/Feedback/Progress",
+  id: "components-progress",
   component: Progress,
   parameters: {
     docs: {

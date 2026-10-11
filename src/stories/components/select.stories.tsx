@@ -14,6 +14,7 @@ import {
 
 const meta = {
   title: "Components/Forms/Select",
+  id: "components-select",
   component: Select,
   parameters: {
     docs: {

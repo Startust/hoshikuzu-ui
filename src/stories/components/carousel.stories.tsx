@@ -11,6 +11,7 @@ import {
 
 const meta = {
   title: "Components/Data Display/Carousel",
+  id: "components-carousel",
   component: Carousel,
   parameters: {
     docs: {

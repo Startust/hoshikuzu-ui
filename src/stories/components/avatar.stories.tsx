@@ -11,6 +11,7 @@ import {
 
 const meta = {
   title: "Components/Data Display/Avatar",
+  id: "components-avatar",
   component: Avatar,
   parameters: {
     docs: {

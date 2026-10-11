@@ -4,6 +4,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 
 const meta = {
   title: "Components/Feedback/Skeleton",
+  id: "components-skeleton",
   component: Skeleton,
   parameters: {
     docs: {

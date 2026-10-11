@@ -18,6 +18,7 @@ import {
 
 const meta = {
   title: "Components/Navigation/Navigation Menu",
+  id: "components-navigation-menu",
   component: NavigationMenu,
   parameters: {
     layout: "padded",

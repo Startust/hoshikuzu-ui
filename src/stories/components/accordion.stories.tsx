@@ -9,6 +9,7 @@ import {
 
 const meta = {
   title: "Components/Layout/Accordion",
+  id: "components-accordion",
   component: Accordion,
   parameters: {
     docs: {

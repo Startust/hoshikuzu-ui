@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 const meta = {
   title: "Components/Navigation/Tabs",
+  id: "components-tabs",
   component: Tabs,
   parameters: {
     docs: {

@@ -21,6 +21,7 @@ import {
 
 const meta = {
   title: "Components/Data Display/Item",
+  id: "components-item",
   component: Item,
   parameters: {
     docs: {

@@ -29,6 +29,7 @@ import {
 
 const meta = {
   title: "Components/Conversation/Questionnaire",
+  id: "components-questionnaire",
   component: Questionnaire,
   parameters: {
     docs: {

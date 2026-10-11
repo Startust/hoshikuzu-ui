@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label"
 
 const meta = {
   title: "Components/Forms/Label",
+  id: "components-label",
   component: Label,
   parameters: {
     docs: {

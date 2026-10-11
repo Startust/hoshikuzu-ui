@@ -13,6 +13,7 @@ import {
 
 const meta = {
   title: "Components/Forms/Checkbox",
+  id: "components-checkbox",
   component: Checkbox,
   parameters: {
     docs: {

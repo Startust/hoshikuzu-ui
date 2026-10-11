@@ -17,6 +17,7 @@ import { Label } from "@/components/ui/label"
 
 const meta = {
   title: "Components/Overlays/Dialog",
+  id: "components-dialog",
   component: Dialog,
   parameters: {
     docs: {

@@ -10,6 +10,7 @@ import {
 
 const meta = {
   title: "Components/Conversation/Bubble",
+  id: "components-bubble",
   component: Bubble,
   parameters: {
     docs: {

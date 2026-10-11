@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 
 const meta = {
   title: "Components/Actions/Button",
+  id: "components-button",
   component: Button,
   parameters: {
     docs: {

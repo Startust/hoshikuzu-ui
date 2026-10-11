@@ -8,6 +8,7 @@ import {
 
 const meta = {
   title: "Components/Layout/Resizable",
+  id: "components-resizable",
   component: ResizablePanelGroup,
   parameters: {
     docs: {

@@ -13,6 +13,7 @@ import {
 
 const meta = {
   title: "Components/Navigation/Breadcrumb",
+  id: "components-breadcrumb",
   component: Breadcrumb,
   parameters: {
     docs: {
