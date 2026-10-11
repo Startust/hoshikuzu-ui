@@ -30,6 +30,10 @@ const config: StorybookConfig = {
   },
   viteFinal(config) {
     config.plugins = [...(config.plugins ?? []), tailwindcss()]
+    // public/ is the Pages root (redirect page, registry JSON, the Storybook
+    // build itself). Vite would copy it into the build and overwrite
+    // Storybook's index.html; static assets come from staticDirs instead.
+    config.publicDir = false
     config.resolve = config.resolve ?? {}
     config.resolve.alias = {
       ...(config.resolve.alias as Record<string, string>),
