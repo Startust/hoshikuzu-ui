@@ -1,11 +1,22 @@
 import type { StorybookConfig } from "@storybook/react-vite"
 import tailwindcss from "@tailwindcss/vite"
 import { resolve } from "node:path"
+import remarkGfm from "remark-gfm"
 
 const config: StorybookConfig = {
   stories: ["../src/stories/**/*.mdx", "../src/stories/**/*.stories.tsx"],
   addons: [
-    "@storybook/addon-docs",
+    {
+      // GFM gives MDX pages tables, task lists and autolinks.
+      name: "@storybook/addon-docs",
+      options: {
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [remarkGfm],
+          },
+        },
+      },
+    },
     "@storybook/addon-themes",
     "@storybook/addon-a11y",
   ],
