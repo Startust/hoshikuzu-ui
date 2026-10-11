@@ -17,7 +17,7 @@ export const atlasDocsTheme = create({
   appBorderRadius: 2,
 
   fontBase:
-    '"Inter", "Noto Sans JP", "Hiragino Sans", "Yu Gothic UI", "Segoe UI", system-ui, sans-serif',
+    '"Noto Sans JP", "Hiragino Sans", "Yu Gothic UI", "Segoe UI", system-ui, sans-serif',
   fontCode: '"SFMono-Regular", "Cascadia Code", "Consolas", monospace',
 
   textColor: "#f8fafc",

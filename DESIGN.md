@@ -23,43 +23,43 @@ colors:
   danger: "#f08a8a"
 typography:
   display:
-    fontFamily: "Inter, Noto Sans JP, Hiragino Sans, Yu Gothic UI, Segoe UI, system-ui, sans-serif"
+    fontFamily: "Noto Sans JP, Hiragino Sans, Yu Gothic UI, Segoe UI, system-ui, sans-serif"
     fontSize: "clamp(2rem, 4vw, 3rem)"
     fontWeight: 300
     lineHeight: 1.05
     letterSpacing: "0"
   headline:
-    fontFamily: "Inter, Noto Sans JP, Hiragino Sans, Yu Gothic UI, Segoe UI, system-ui, sans-serif"
+    fontFamily: "Noto Sans JP, Hiragino Sans, Yu Gothic UI, Segoe UI, system-ui, sans-serif"
     fontSize: "1.125rem"
     fontWeight: 300
     lineHeight: 1.25
     letterSpacing: "0"
   title:
-    fontFamily: "Inter, Noto Sans JP, Hiragino Sans, Yu Gothic UI, Segoe UI, system-ui, sans-serif"
+    fontFamily: "Noto Sans JP, Hiragino Sans, Yu Gothic UI, Segoe UI, system-ui, sans-serif"
     fontSize: "0.875rem"
     fontWeight: 600
     lineHeight: 1.25
     letterSpacing: "0.08em"
   body:
-    fontFamily: "Inter, Noto Sans JP, Hiragino Sans, Yu Gothic UI, Segoe UI, system-ui, sans-serif"
+    fontFamily: "Noto Sans JP, Hiragino Sans, Yu Gothic UI, Segoe UI, system-ui, sans-serif"
     fontSize: "0.875rem"
     fontWeight: 400
     lineHeight: 1.6
     letterSpacing: "0"
   lead:
-    fontFamily: "Inter, Noto Sans JP, Hiragino Sans, Yu Gothic UI, Segoe UI, system-ui, sans-serif"
+    fontFamily: "Noto Sans JP, Hiragino Sans, Yu Gothic UI, Segoe UI, system-ui, sans-serif"
     fontSize: "0.9375rem"
     fontWeight: 400
     lineHeight: 1.6
     letterSpacing: "0"
   control-label:
-    fontFamily: "Inter, Noto Sans JP, Hiragino Sans, Yu Gothic UI, Segoe UI, system-ui, sans-serif"
+    fontFamily: "Noto Sans JP, Hiragino Sans, Yu Gothic UI, Segoe UI, system-ui, sans-serif"
     fontSize: "0.6875rem"
     fontWeight: 600
     lineHeight: 1.2
     letterSpacing: "0.14em"
   label:
-    fontFamily: "Inter, Noto Sans JP, Hiragino Sans, Yu Gothic UI, Segoe UI, system-ui, sans-serif"
+    fontFamily: "Noto Sans JP, Hiragino Sans, Yu Gothic UI, Segoe UI, system-ui, sans-serif"
     fontSize: "0.625rem"
     fontWeight: 600
     lineHeight: 1.2
@@ -172,8 +172,12 @@ semantic tokens under `data-atlas-mode`.
 
 ## 3. Typography
 
-System sans with Japanese fallbacks (Inter when installed, then Noto Sans JP,
-Hiragino, Yu Gothic, Segoe UI). Mono for times, paths, IDs and readouts.
+**Noto Sans JP** for everything, Latin and Japanese alike, including inputs,
+selects and menus (they inherit the page font). Fallbacks: Hiragino Sans on
+macOS, then Yu Gothic UI, Meiryo and Segoe UI on Windows. Inter is deliberately
+not in the stack: it only rendered on machines that happened to have it
+installed, so the same screen looked different per device. Mono for times,
+paths, IDs and readouts.
 
 ### Hierarchy
 

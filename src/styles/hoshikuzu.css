@@ -189,8 +189,10 @@
 /* Tailwind theme bridge                                               */
 /* ------------------------------------------------------------------ */
 @theme inline {
+  /* Noto Sans JP first: one face for Latin and Japanese. Hiragino covers
+     macOS without Noto; Yu Gothic / Meiryo / Segoe UI cover older Windows. */
   --font-sans:
-    "Inter", "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
     "Yu Gothic UI", "Yu Gothic", "Meiryo", "Segoe UI", system-ui, sans-serif;
   --font-heading: var(--font-sans);
   --font-mono:

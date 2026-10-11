@@ -8,7 +8,7 @@
   ],
   "cssVars": {
     "theme": {
-      "font-sans": "\"Inter\", \"Noto Sans JP\", \"Hiragino Sans\", \"Hiragino Kaku Gothic ProN\", \"Yu Gothic UI\", \"Yu Gothic\", \"Meiryo\", \"Segoe UI\", system-ui, sans-serif",
+      "font-sans": "\"Noto Sans JP\", \"Hiragino Sans\", \"Hiragino Kaku Gothic ProN\", \"Yu Gothic UI\", \"Yu Gothic\", \"Meiryo\", \"Segoe UI\", system-ui, sans-serif",
       "font-heading": "var(--font-sans)",
       "font-mono": "\"SFMono-Regular\", \"Cascadia Code\", \"Cascadia Mono\", \"Consolas\", \"Noto Sans Mono CJK JP\", monospace",
       "color-background": "var(--background)",
