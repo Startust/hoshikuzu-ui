@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label",
+  "title": "Label",
+  "dependencies": [
+    "cn"
+  ],
+  "registryDependencies": [
+    "https://yihuil1992.github.io/hoshikuzu-ui/r/hoshikuzu-theme.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/label.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { cn } from \"cn\"\n\nfunction Label({ className, ...props }: React.ComponentProps<\"label\">) {\n  return (\n    <label\n      data-slot=\"label\"\n      className={cn(\n        \"flex items-center gap-2 text-[0.6875rem] leading-none font-semibold tracking-[0.16em] text-muted-foreground uppercase select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-45 peer-disabled:cursor-not-allowed peer-disabled:opacity-45\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Label }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "timeline",
+  "title": "Timeline",
+  "description": "Time-indexed log for transcripts and activity.",
+  "dependencies": [
+    "cn"
+  ],
+  "registryDependencies": [
+    "https://yihuil1992.github.io/hoshikuzu-ui/r/hoshikuzu-theme.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/atlas/timeline.tsx",
+      "content": "import * as React from \"react\"\nimport { cn } from \"cn\"\n\n/**\n * A time-indexed log: transcript lines, activity, release notes. Times sit in\n * a fixed mono column so the text column stays aligned.\n */\nfunction Timeline({ className, ...props }: React.ComponentProps<\"ol\">) {\n  return (\n    <ol\n      data-slot=\"timeline\"\n      className={cn(\"grid text-sm\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction TimelineItem({\n  className,\n  active = false,\n  ...props\n}: React.ComponentProps<\"li\"> & {\n  /** Marks the line currently playing or in focus. */\n  active?: boolean\n}) {\n  return (\n    <li\n      data-slot=\"timeline-item\"\n      data-active={active || undefined}\n      className={cn(\n        \"group/timeline-item grid grid-cols-1 gap-x-3 gap-y-1 border-b border-border py-2.5 last:border-b-0 sm:grid-cols-[4.5rem_minmax(0,1fr)]\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction TimelineTime({ className, ...props }: React.ComponentProps<\"time\">) {\n  return (\n    <time\n      data-slot=\"timeline-time\"\n      className={cn(\n        \"font-mono text-xs leading-6 text-faint-foreground tabular-nums group-data-active/timeline-item:text-signal\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction TimelineContent({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"timeline-content\"\n      className={cn(\n        \"min-w-0 leading-6 text-muted-foreground group-data-active/timeline-item:text-foreground\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction TimelineMeta({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"timeline-meta\"\n      className={cn(\n        \"text-2xs leading-[1.2] font-semibold tracking-[0.16em] text-faint-foreground uppercase sm:col-start-2\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Timeline, TimelineContent, TimelineItem, TimelineMeta, TimelineTime }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "atlas"
+  ],
+  "type": "registry:ui"
+}

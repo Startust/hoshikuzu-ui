@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "measurement",
+  "title": "Measurement",
+  "description": "Light-numeral readings on a hairline grid.",
+  "dependencies": [
+    "cn"
+  ],
+  "registryDependencies": [
+    "https://yihuil1992.github.io/hoshikuzu-ui/r/hoshikuzu-theme.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/atlas/measurement.tsx",
+      "content": "import * as React from \"react\"\nimport { cn } from \"cn\"\n\n/**\n * A reading taken from an instrument: light numerals, a tracked label, an\n * optional icon. Reads as a measurement in an atlas, not a SaaS hero metric.\n */\nfunction Measurement({\n  className,\n  tone = \"default\",\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  /** Tints the icon only. The number stays in foreground ink. */\n  tone?: \"default\" | \"signal\" | \"success\" | \"warning\" | \"destructive\"\n}) {\n  return (\n    <div\n      data-slot=\"measurement\"\n      data-tone={tone}\n      className={cn(\n        \"group/measurement grid min-h-28 content-end gap-2 p-4 text-foreground\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction MeasurementIcon({ className, ...props }: React.ComponentProps<\"span\">) {\n  return (\n    <span\n      data-slot=\"measurement-icon\"\n      aria-hidden\n      className={cn(\n        \"mb-auto inline-flex text-faint-foreground group-data-[tone=destructive]/measurement:text-destructive group-data-[tone=signal]/measurement:text-signal group-data-[tone=success]/measurement:text-success group-data-[tone=warning]/measurement:text-warning [&_svg:not([class*='size-'])]:size-4\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction MeasurementValue({ className, ...props }: React.ComponentProps<\"p\">) {\n  return (\n    <p\n      data-slot=\"measurement-value\"\n      className={cn(\n        \"flex items-baseline gap-1.5 text-3xl leading-none font-light tabular-nums\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction MeasurementUnit({ className, ...props }: React.ComponentProps<\"span\">) {\n  return (\n    <span\n      data-slot=\"measurement-unit\"\n      className={cn(\"text-sm font-normal text-muted-foreground\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction MeasurementLabel({ className, ...props }: React.ComponentProps<\"p\">) {\n  return (\n    <p\n      data-slot=\"measurement-label\"\n      className={cn(\n        \"text-2xs leading-[1.2] font-semibold tracking-[0.16em] text-muted-foreground uppercase\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction MeasurementNote({ className, ...props }: React.ComponentProps<\"p\">) {\n  return (\n    <p\n      data-slot=\"measurement-note\"\n      className={cn(\"text-xs text-faint-foreground\", className)}\n      {...props}\n    />\n  )\n}\n\n/**\n * Lays measurements out on a hairline grid: the gaps are the rules, so no\n * cell carries its own border.\n */\nfunction MeasurementGrid({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"measurement-grid\"\n      className={cn(\n        \"grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-4 *:data-[slot=measurement]:bg-card\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport {\n  Measurement,\n  MeasurementGrid,\n  MeasurementIcon,\n  MeasurementLabel,\n  MeasurementNote,\n  MeasurementUnit,\n  MeasurementValue,\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "atlas"
+  ],
+  "type": "registry:ui"
+}

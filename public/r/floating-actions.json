@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "floating-actions",
+  "title": "Floating Actions",
+  "description": "Corner utility controls with annotation labels.",
+  "dependencies": [
+    "@base-ui/react",
+    "cn"
+  ],
+  "registryDependencies": [
+    "https://yihuil1992.github.io/hoshikuzu-ui/r/hoshikuzu-theme.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/atlas/floating-actions.tsx",
+      "content": "import * as React from \"react\"\nimport { mergeProps } from \"@base-ui/react/merge-props\"\nimport { useRender } from \"@base-ui/react/use-render\"\nimport { cn } from \"cn\"\n\n/**\n * A quiet cluster of utility controls pinned to the viewport corner (mode\n * switch, home). Sits above the page, respects safe-area insets.\n */\nfunction FloatingActions({\n  className,\n  position = \"bottom-right\",\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  position?: \"bottom-right\" | \"bottom-left\"\n}) {\n  return (\n    <div\n      data-slot=\"floating-actions\"\n      data-position={position}\n      className={cn(\n        \"fixed bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 flex items-center gap-2 md:bottom-6\",\n        position === \"bottom-right\"\n          ? \"right-[max(1rem,env(safe-area-inset-right))] flex-row md:right-6\"\n          : \"left-[max(1rem,env(safe-area-inset-left))] flex-row-reverse md:left-6\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\n/**\n * A square icon control whose label surfaces as a small annotation on hover\n * or keyboard focus. The label slides with transform only, so nothing reflows.\n */\nfunction FloatingAction({\n  className,\n  label,\n  children,\n  render,\n  ...props\n}: useRender.ComponentProps<\"button\"> & {\n  /** Visible on hover/focus and used as the accessible name. */\n  label: string\n}) {\n  const content = (\n    <>\n      {children}\n      <span\n        aria-hidden\n        data-slot=\"floating-action-label\"\n        className=\"pointer-events-none absolute top-1/2 right-[calc(100%+0.5rem)] -translate-y-1/2 translate-x-1 rounded-xs border border-border bg-popover px-2 py-1 text-2xs font-semibold tracking-[0.16em] whitespace-nowrap text-popover-foreground uppercase opacity-0 shadow-control transition-[opacity,transform] duration-180 ease-out-quint group-hover/floating-action:translate-x-0 group-hover/floating-action:opacity-100 group-focus-visible/floating-action:translate-x-0 group-focus-visible/floating-action:opacity-100\"\n      >\n        {label}\n      </span>\n    </>\n  )\n\n  return useRender({\n    defaultTagName: \"button\",\n    props: mergeProps<\"button\">(\n      {\n        \"aria-label\": label,\n        className: cn(\n          \"group/floating-action relative inline-flex size-8 items-center justify-center rounded-sm border border-border bg-card/85 text-foreground shadow-control transition-[border-color,background-color,transform] duration-180 ease-out-quint outline-none hover:border-signal focus-visible:border-signal focus-visible:ring-2 focus-visible:ring-ring/30 active:scale-[0.96] [&_svg]:size-3.5 [&_svg]:shrink-0\",\n          className\n        ),\n        children: content,\n      },\n      props\n    ),\n    render,\n    state: {\n      slot: \"floating-action\",\n    },\n  })\n}\n\nexport { FloatingAction, FloatingActions }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "atlas"
+  ],
+  "type": "registry:ui"
+}

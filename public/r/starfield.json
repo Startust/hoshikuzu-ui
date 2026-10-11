@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "starfield",
+  "title": "Starfield",
+  "description": "Decorative star dots (night) or graticule (archive) backdrop.",
+  "dependencies": [
+    "cn"
+  ],
+  "registryDependencies": [
+    "https://yihuil1992.github.io/hoshikuzu-ui/r/hoshikuzu-theme.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/atlas/starfield.tsx",
+      "content": "import * as React from \"react\"\nimport { cn } from \"cn\"\n\n/**\n * The page atmosphere: sparse star dots at night, a faint graticule on the\n * archive sheet. Decorative only, never interactive, never a gradient wash.\n */\nfunction Starfield({\n  className,\n  fixed = false,\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  /** Pin to the viewport instead of the nearest positioned ancestor. */\n  fixed?: boolean\n}) {\n  return (\n    <div\n      aria-hidden\n      data-slot=\"starfield\"\n      className={cn(\n        \"atlas-starfield pointer-events-none inset-0 -z-10 opacity-70\",\n        fixed ? \"fixed\" : \"absolute\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Starfield }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "atlas"
+  ],
+  "type": "registry:ui"
+}

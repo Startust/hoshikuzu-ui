@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert",
+  "title": "Alert",
+  "dependencies": [
+    "class-variance-authority",
+    "cn"
+  ],
+  "registryDependencies": [
+    "https://yihuil1992.github.io/hoshikuzu-ui/r/hoshikuzu-theme.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/alert.tsx",
+      "content": "import * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { cn } from \"cn\"\n\nconst alertVariants = cva(\n  \"group/alert relative grid w-full gap-0.5 rounded-sm border px-4 py-3 text-left text-sm has-data-[slot=alert-action]:relative has-data-[slot=alert-action]:pr-18 has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-3 *:[svg]:row-span-2 *:[svg]:translate-y-1 *:[svg:not([class*='size-'])]:size-4\",\n  {\n    variants: {\n      variant: {\n        default:\n          \"border-border bg-surface-raised/60 text-foreground *:[svg]:text-muted-foreground\",\n        info: \"border-info-border bg-info-surface text-foreground *:data-[slot=alert-title]:text-info *:[svg]:text-info\",\n        success:\n          \"border-success-border bg-success-surface text-foreground *:data-[slot=alert-title]:text-success *:[svg]:text-success\",\n        warning:\n          \"border-warning-border bg-warning-surface text-foreground *:data-[slot=alert-title]:text-warning *:[svg]:text-warning\",\n        destructive:\n          \"border-destructive-border bg-destructive-surface text-destructive *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-destructive\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  }\n)\n\nfunction Alert({\n  className,\n  variant,\n  ...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof alertVariants>) {\n  return (\n    <div\n      data-slot=\"alert\"\n      role=\"alert\"\n      className={cn(alertVariants({ variant }), className)}\n      {...props}\n    />\n  )\n}\n\nfunction AlertTitle({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"alert-title\"\n      className={cn(\n        \"leading-6 font-semibold group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction AlertDescription({\n  className,\n  ...props\n}: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"alert-description\"\n      className={cn(\n        \"text-sm leading-6 text-pretty text-muted-foreground group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction AlertAction({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"alert-action\"\n      className={cn(\"absolute top-2.5 right-3\", className)}\n      {...props}\n    />\n  )\n}\n\nexport { Alert, AlertTitle, AlertDescription, AlertAction }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

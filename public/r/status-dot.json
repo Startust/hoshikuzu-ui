@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "status-dot",
+  "title": "Status Dot",
+  "description": "Status points of light, with an optional live halo.",
+  "dependencies": [
+    "class-variance-authority",
+    "cn"
+  ],
+  "registryDependencies": [
+    "https://yihuil1992.github.io/hoshikuzu-ui/r/hoshikuzu-theme.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/atlas/status-dot.tsx",
+      "content": "import * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { cn } from \"cn\"\n\nconst statusDotVariants = cva(\n  \"relative inline-block shrink-0 rounded-full bg-current\",\n  {\n    variants: {\n      tone: {\n        signal: \"text-signal\",\n        success: \"text-success\",\n        warning: \"text-warning\",\n        destructive: \"text-destructive\",\n        idle: \"text-faint-foreground\",\n      },\n      size: {\n        sm: \"size-1.5\",\n        default: \"size-2\",\n        lg: \"size-2.5\",\n      },\n      live: {\n        true: \"animate-atlas-pulse\",\n        false: \"\",\n      },\n    },\n    defaultVariants: {\n      tone: \"signal\",\n      size: \"default\",\n      live: false,\n    },\n  }\n)\n\n/**\n * A small point of light for readiness and state. Color is never the only\n * signal: pair it with text, or pass `label` so assistive tech hears it.\n */\nfunction StatusDot({\n  className,\n  tone,\n  size,\n  live,\n  label,\n  ...props\n}: React.ComponentProps<\"span\"> &\n  VariantProps<typeof statusDotVariants> & {\n    label?: string\n  }) {\n  return (\n    <span\n      data-slot=\"status-dot\"\n      data-tone={tone ?? \"signal\"}\n      role={label ? \"img\" : undefined}\n      aria-label={label}\n      aria-hidden={label ? undefined : true}\n      className={cn(statusDotVariants({ tone, size, live }), className)}\n      {...props}\n    />\n  )\n}\n\n/** A dot with a short visible label, such as \"Ready\" or \"Recording\". */\nfunction StatusIndicator({\n  className,\n  tone,\n  live,\n  children,\n  ...props\n}: React.ComponentProps<\"span\"> &\n  Pick<VariantProps<typeof statusDotVariants>, \"tone\" | \"live\">) {\n  return (\n    <span\n      data-slot=\"status-indicator\"\n      className={cn(\n        \"inline-flex items-center gap-2 text-xs font-medium text-muted-foreground\",\n        className\n      )}\n      {...props}\n    >\n      <StatusDot tone={tone} live={live} />\n      {children}\n    </span>\n  )\n}\n\nexport { StatusDot, StatusIndicator, statusDotVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "atlas"
+  ],
+  "type": "registry:ui"
+}

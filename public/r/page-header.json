@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "page-header",
+  "title": "Page Header",
+  "description": "Eyebrow, light display title, description and actions.",
+  "dependencies": [
+    "cn"
+  ],
+  "registryDependencies": [
+    "https://yihuil1992.github.io/hoshikuzu-ui/r/hoshikuzu-theme.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/atlas/page-header.tsx",
+      "content": "import * as React from \"react\"\nimport { cn } from \"cn\"\n\n/**\n * The top of a tool or work page: a tracked eyebrow, a light-weight title and\n * a quiet description, with actions aligned to the right on wide screens.\n */\nfunction PageHeader({ className, ...props }: React.ComponentProps<\"header\">) {\n  return (\n    <header\n      data-slot=\"page-header\"\n      className={cn(\n        \"grid gap-4 border-b border-border pb-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-end\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction PageHeaderHeading({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"page-header-heading\"\n      className={cn(\"grid min-w-0 gap-3\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction PageHeaderEyebrow({ className, ...props }: React.ComponentProps<\"p\">) {\n  return (\n    <p\n      data-slot=\"page-header-eyebrow\"\n      className={cn(\n        \"text-2xs leading-[1.2] font-semibold tracking-[0.22em] text-muted-foreground uppercase\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction PageHeaderTitle({ className, ...props }: React.ComponentProps<\"h1\">) {\n  return (\n    <h1\n      data-slot=\"page-header-title\"\n      className={cn(\n        \"text-[clamp(2rem,4vw,3rem)] leading-[1.05] font-light text-balance text-foreground\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction PageHeaderDescription({\n  className,\n  ...props\n}: React.ComponentProps<\"p\">) {\n  return (\n    <p\n      data-slot=\"page-header-description\"\n      className={cn(\n        \"max-w-[64ch] text-[0.9375rem] leading-relaxed text-muted-foreground\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction PageHeaderActions({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"page-header-actions\"\n      className={cn(\"flex flex-wrap items-center gap-2\", className)}\n      {...props}\n    />\n  )\n}\n\nexport {\n  PageHeader,\n  PageHeaderActions,\n  PageHeaderDescription,\n  PageHeaderEyebrow,\n  PageHeaderHeading,\n  PageHeaderTitle,\n}\n",
+      "type": "registry:ui"
+    }
+  ],
+  "categories": [
+    "atlas"
+  ],
+  "type": "registry:ui"
+}

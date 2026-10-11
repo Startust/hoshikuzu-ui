@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea",
+  "title": "Textarea",
+  "dependencies": [
+    "cn"
+  ],
+  "registryDependencies": [
+    "https://yihuil1992.github.io/hoshikuzu-ui/r/hoshikuzu-theme.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/textarea.tsx",
+      "content": "import * as React from \"react\"\nimport { cn } from \"cn\"\n\nfunction Textarea({ className, ...props }: React.ComponentProps<\"textarea\">) {\n  return (\n    <textarea\n      data-slot=\"textarea\"\n      className={cn(\n        \"atlas-scrollbar flex field-sizing-content min-h-20 w-full rounded-sm border border-input bg-card/45 px-3 py-2 text-base leading-6 text-foreground transition-[border-color,background-color,box-shadow] duration-150 ease-out-quint outline-none selection:bg-primary selection:text-primary-foreground placeholder:text-faint-foreground hover:border-border-strong focus-visible:border-ring focus-visible:bg-card/70 focus-visible:ring-2 focus-visible:ring-ring/25 disabled:cursor-not-allowed disabled:opacity-45 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/20 md:text-sm\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Textarea }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

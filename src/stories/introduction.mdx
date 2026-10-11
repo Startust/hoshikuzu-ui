@@ -1,0 +1,70 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+
+<Meta title="Introduction" />
+
+# Hoshikuzu UI
+
+A shadcn component kit in the Hoshikuzu style: a quiet archival star atlas.
+Interfaces built with it read like a private astronomical index, where each
+control is an instrument and each panel annotates something on the sky.
+
+The kit is distilled from three projects:
+
+- **hoshikuzu**, the source of the language: deep-space canvas, warm
+  starlight text, tracked index labels, hairline rules, 2px corners.
+- **note-taker**, which contributed instrument patterns: status dots, data
+  readouts, transcript timelines, the custom select, and the hard-surface rule.
+- **review-pilot**, which contributed operational patterns: semantic status
+  tints, measurements, the rail and bottom navigation, toasts and chips.
+
+## Two modes, one token set
+
+| Mode | Use | Contract |
+| --- | --- | --- |
+| Night atlas | Default. Starfield pages and tools. | `<html data-atlas-mode="night" class="dark">` |
+| Archive sheet | Bright rooms and dense reading. | `<html data-atlas-mode="archive">` |
+
+Use the theme switch in the toolbar to see every story in both modes.
+
+## Install
+
+The kit is published as a shadcn registry. Components are built on
+**Base UI** (`base-nova`), shadcn's current default.
+
+```bash
+npx shadcn@latest init -b base
+npx shadcn@latest add https://yihuil1992.github.io/hoshikuzu-ui/r/hoshikuzu-theme.json
+npx shadcn@latest add https://yihuil1992.github.io/hoshikuzu-ui/r/button.json
+```
+
+Or register the namespace once in `components.json` and add by name:
+
+```json
+{
+  "registries": {
+    "@hoshikuzu": "https://yihuil1992.github.io/hoshikuzu-ui/r/{name}.json"
+  }
+}
+```
+
+```bash
+npx shadcn@latest add @hoshikuzu/button @hoshikuzu/star-panel
+```
+
+## Where things live
+
+- **Foundations**: color, type, shape, elevation and motion tokens.
+- **Atlas**: components the kit adds on top of shadcn (star panel,
+  measurements, status dots, data lists, timelines, mode switch, navigation).
+- **Components**: every shadcn component restyled to the atlas language.
+- **Patterns**: full screens composed from the kit.
+
+## Principles
+
+1. **Annotate, do not decorate.** UI behaves like labels and observatory notes.
+2. **Silence is structure.** Alignment and spacing carry the hierarchy.
+3. **Let the stars own the light.** Accents are rare signals, under a tenth of
+   a screen. No gradient washes, no decorative glow.
+4. **Flat until focused.** Surfaces rest on hairlines; elevation appears only
+   for overlays and active objects.
+5. **Motion is single-stage.** Short ease-out transitions, never bounce.
