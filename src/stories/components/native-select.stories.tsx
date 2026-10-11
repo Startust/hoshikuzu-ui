@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/native-select"
 
 const meta = {
-  title: "Components/Native Select",
+  title: "Components/Forms/Native Select",
   component: NativeSelect,
   parameters: {
     docs: {

@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/avatar"
 
 const meta = {
-  title: "Components/Avatar",
+  title: "Components/Data Display/Avatar",
   component: Avatar,
   parameters: {
     docs: {

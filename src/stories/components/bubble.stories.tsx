@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/bubble"
 
 const meta = {
-  title: "Components/Bubble",
+  title: "Components/Conversation/Bubble",
   component: Bubble,
   parameters: {
     docs: {

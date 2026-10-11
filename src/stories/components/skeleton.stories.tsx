@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { Skeleton } from "@/components/ui/skeleton"
 
 const meta = {
-  title: "Components/Skeleton",
+  title: "Components/Feedback/Skeleton",
   component: Skeleton,
   parameters: {
     docs: {

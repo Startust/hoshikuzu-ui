@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/attachment"
 
 const meta = {
-  title: "Components/Attachment",
+  title: "Components/Conversation/Attachment",
   component: Attachment,
   parameters: {
     docs: {

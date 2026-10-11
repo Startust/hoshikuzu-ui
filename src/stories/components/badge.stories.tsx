@@ -4,7 +4,7 @@ import { CheckIcon, CircleAlertIcon, RadioIcon } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 
 const meta = {
-  title: "Components/Badge",
+  title: "Components/Data Display/Badge",
   component: Badge,
   parameters: {
     docs: {

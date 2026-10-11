@@ -28,7 +28,7 @@ import {
 } from "@/components/ui/questionnaire"
 
 const meta = {
-  title: "Components/Questionnaire",
+  title: "Components/Conversation/Questionnaire",
   component: Questionnaire,
   parameters: {
     docs: {

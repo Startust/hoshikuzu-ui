@@ -10,7 +10,7 @@ import {
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
 const meta = {
-  title: "Components/Toggle Group",
+  title: "Components/Actions/Toggle Group",
   component: ToggleGroup,
   parameters: {
     docs: {

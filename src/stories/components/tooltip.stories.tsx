@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/tooltip"
 
 const meta = {
-  title: "Components/Tooltip",
+  title: "Components/Overlays/Tooltip",
   component: Tooltip,
   decorators: [
     (Story) => (

@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/select"
 
 const meta = {
-  title: "Components/Select",
+  title: "Components/Forms/Select",
   component: Select,
   parameters: {
     docs: {

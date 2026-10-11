@@ -12,7 +12,7 @@ import {
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 const meta = {
-  title: "Components/Radio Group",
+  title: "Components/Forms/Radio Group",
   component: RadioGroup,
   parameters: {
     docs: {

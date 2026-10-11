@@ -17,7 +17,7 @@ import {
 import { Button } from "@/components/ui/button"
 
 const meta = {
-  title: "Components/Alert Dialog",
+  title: "Components/Overlays/Alert Dialog",
   component: AlertDialog,
   parameters: {
     docs: {

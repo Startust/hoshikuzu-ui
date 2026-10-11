@@ -4,7 +4,7 @@ import { BellIcon, EyeIcon, PinIcon, StarIcon } from "lucide-react"
 import { Toggle } from "@/components/ui/toggle"
 
 const meta = {
-  title: "Components/Toggle",
+  title: "Components/Actions/Toggle",
   component: Toggle,
   parameters: {
     docs: {

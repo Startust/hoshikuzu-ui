@@ -63,15 +63,34 @@ const preview: Preview = {
       test: "todo",
     },
     options: {
-      // Groups in a fixed order, components A-Z inside each group, stories in
-      // declaration order (so Playground stays first). Storybook evaluates
-      // this on the server: keep it self-contained, plain JS, no type
-      // annotations.
+      // Top-level groups and component categories in a fixed order, entries
+      // A-Z within a category, stories in declaration order (so Playground
+      // stays first). Storybook evaluates this on the server: keep it
+      // self-contained, plain JS, no type annotations.
       storySort: (a, b) => {
-        const groups = ["Introduction", "Foundations", "Atlas", "Components", "Patterns"]
-        const ga = groups.indexOf(a.title.split("/")[0])
-        const gb = groups.indexOf(b.title.split("/")[0])
-        if (ga !== gb) return (ga === -1 ? 99 : ga) - (gb === -1 ? 99 : gb)
+        const order = [
+          "Introduction",
+          "Foundations",
+          "Atlas",
+          "Components/Actions",
+          "Components/Forms",
+          "Components/Overlays",
+          "Components/Navigation",
+          "Components/Feedback",
+          "Components/Data Display",
+          "Components/Layout",
+          "Components/Conversation",
+          "Patterns",
+        ]
+        const rank = (title) => {
+          for (let i = order.length - 1; i >= 0; i--) {
+            if (title === order[i] || title.startsWith(order[i] + "/")) return i
+          }
+          return order.length
+        }
+        const ra = rank(a.title)
+        const rb = rank(b.title)
+        if (ra !== rb) return ra - rb
         return a.title === b.title ? 0 : a.title.localeCompare(b.title)
       },
     },

@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/accordion"
 
 const meta = {
-  title: "Components/Accordion",
+  title: "Components/Layout/Accordion",
   component: Accordion,
   parameters: {
     docs: {

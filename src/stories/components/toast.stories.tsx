@@ -7,7 +7,7 @@ import { Toaster, createToastManager } from "@/components/ui/toast"
 type ToastManager = ReturnType<typeof createToastManager>
 
 const meta = {
-  title: "Components/Toast",
+  title: "Components/Feedback/Toast",
   component: Toaster,
   parameters: {
     docs: {

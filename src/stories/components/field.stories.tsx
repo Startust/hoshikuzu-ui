@@ -27,7 +27,7 @@ import { Switch } from "@/components/ui/switch"
 import { Textarea } from "@/components/ui/textarea"
 
 const meta = {
-  title: "Components/Field",
+  title: "Components/Forms/Field",
   component: Field,
   parameters: {
     docs: {

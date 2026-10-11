@@ -5,7 +5,7 @@ import { Slider } from "@/components/ui/slider"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 const meta = {
-  title: "Components/Direction",
+  title: "Components/Layout/Direction",
   component: DirectionProvider,
   parameters: {
     docs: {

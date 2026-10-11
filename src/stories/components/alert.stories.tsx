@@ -16,7 +16,7 @@ import {
 import { Button } from "@/components/ui/button"
 
 const meta = {
-  title: "Components/Alert",
+  title: "Components/Feedback/Alert",
   component: Alert,
   parameters: {
     docs: {

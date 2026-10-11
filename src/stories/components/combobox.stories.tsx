@@ -21,7 +21,7 @@ import {
 import { Label } from "@/components/ui/label"
 
 const meta = {
-  title: "Components/Combobox",
+  title: "Components/Forms/Combobox",
   component: Combobox,
   parameters: {
     docs: {

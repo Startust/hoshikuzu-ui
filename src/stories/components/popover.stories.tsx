@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/popover"
 
 const meta = {
-  title: "Components/Popover",
+  title: "Components/Overlays/Popover",
   component: Popover,
   parameters: {
     docs: {

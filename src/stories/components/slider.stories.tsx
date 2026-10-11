@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label"
 import { Slider } from "@/components/ui/slider"
 
 const meta = {
-  title: "Components/Slider",
+  title: "Components/Forms/Slider",
   component: Slider,
   parameters: {
     docs: {

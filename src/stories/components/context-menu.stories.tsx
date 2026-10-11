@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/context-menu"
 
 const meta = {
-  title: "Components/Context Menu",
+  title: "Components/Navigation/Context Menu",
   component: ContextMenu,
   parameters: {
     docs: {

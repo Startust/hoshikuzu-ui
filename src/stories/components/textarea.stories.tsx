@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 
 const meta = {
-  title: "Components/Textarea",
+  title: "Components/Forms/Textarea",
   component: Textarea,
   parameters: {
     docs: {

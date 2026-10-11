@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/menubar"
 
 const meta = {
-  title: "Components/Menubar",
+  title: "Components/Navigation/Menubar",
   component: Menubar,
   parameters: {
     docs: {

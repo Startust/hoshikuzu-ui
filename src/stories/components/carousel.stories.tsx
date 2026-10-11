@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/carousel"
 
 const meta = {
-  title: "Components/Carousel",
+  title: "Components/Data Display/Carousel",
   component: Carousel,
   parameters: {
     docs: {

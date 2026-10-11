@@ -4,7 +4,7 @@ import { ArrowUpRightIcon, MoonIcon, PlusIcon, XIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const meta = {
-  title: "Components/Button",
+  title: "Components/Actions/Button",
   component: Button,
   parameters: {
     docs: {

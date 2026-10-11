@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/navigation-menu"
 
 const meta = {
-  title: "Components/Navigation Menu",
+  title: "Components/Navigation/Navigation Menu",
   component: NavigationMenu,
   parameters: {
     layout: "padded",

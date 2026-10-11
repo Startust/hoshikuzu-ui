@@ -28,7 +28,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 const meta = {
-  title: "Components/Dropdown Menu",
+  title: "Components/Navigation/Dropdown Menu",
   component: DropdownMenu,
   parameters: {
     docs: {

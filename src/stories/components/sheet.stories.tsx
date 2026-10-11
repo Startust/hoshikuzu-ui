@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/sheet"
 
 const meta = {
-  title: "Components/Sheet",
+  title: "Components/Overlays/Sheet",
   component: Sheet,
   parameters: {
     docs: {

@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/table"
 
 const meta = {
-  title: "Components/Table",
+  title: "Components/Data Display/Table",
   component: Table,
   parameters: {
     docs: {

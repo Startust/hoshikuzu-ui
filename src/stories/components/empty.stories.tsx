@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/empty"
 
 const meta = {
-  title: "Components/Empty",
+  title: "Components/Feedback/Empty",
   component: Empty,
   parameters: {
     docs: {

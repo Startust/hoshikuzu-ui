@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/field"
 
 const meta = {
-  title: "Components/Checkbox",
+  title: "Components/Forms/Checkbox",
   component: Checkbox,
   parameters: {
     docs: {

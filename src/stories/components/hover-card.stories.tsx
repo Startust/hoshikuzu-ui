@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/hover-card"
 
 const meta = {
-  title: "Components/Hover Card",
+  title: "Components/Overlays/Hover Card",
   component: HoverCard,
   parameters: {
     docs: {

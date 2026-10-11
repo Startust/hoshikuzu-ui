@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/drawer"
 
 const meta = {
-  title: "Components/Drawer",
+  title: "Components/Overlays/Drawer",
   component: Drawer,
   parameters: {
     docs: {

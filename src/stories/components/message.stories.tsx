@@ -27,7 +27,7 @@ import {
 } from "@/components/ui/message"
 
 const meta = {
-  title: "Components/Message",
+  title: "Components/Conversation/Message",
   component: Message,
   parameters: {
     docs: {

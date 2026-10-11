@@ -13,7 +13,7 @@ import { Kbd } from "@/components/ui/kbd"
 import { Label } from "@/components/ui/label"
 
 const meta = {
-  title: "Components/Input Group",
+  title: "Components/Forms/Input Group",
   component: InputGroup,
   parameters: {
     docs: {

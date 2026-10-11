@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
 const meta = {
-  title: "Components/Label",
+  title: "Components/Forms/Label",
   component: Label,
   parameters: {
     docs: {

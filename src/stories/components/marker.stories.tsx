@@ -4,7 +4,7 @@ import { LockIcon, MicIcon, PauseIcon } from "lucide-react"
 import { Marker, MarkerContent, MarkerIcon } from "@/components/ui/marker"
 
 const meta = {
-  title: "Components/Marker",
+  title: "Components/Conversation/Marker",
   component: Marker,
   parameters: {
     docs: {

@@ -4,7 +4,7 @@ import { CornerDownLeftIcon } from "lucide-react"
 import { Kbd, KbdGroup } from "@/components/ui/kbd"
 
 const meta = {
-  title: "Components/Kbd",
+  title: "Components/Data Display/Kbd",
   component: Kbd,
   parameters: {
     docs: {

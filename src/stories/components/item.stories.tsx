@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/item"
 
 const meta = {
-  title: "Components/Item",
+  title: "Components/Data Display/Item",
   component: Item,
   parameters: {
     docs: {

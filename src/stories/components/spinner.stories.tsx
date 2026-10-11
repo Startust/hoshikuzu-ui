@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
 
 const meta = {
-  title: "Components/Spinner",
+  title: "Components/Feedback/Spinner",
   component: Spinner,
   parameters: {
     docs: {

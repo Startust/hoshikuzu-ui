@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/resizable"
 
 const meta = {
-  title: "Components/Resizable",
+  title: "Components/Layout/Resizable",
   component: ResizablePanelGroup,
   parameters: {
     docs: {

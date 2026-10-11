@@ -11,7 +11,7 @@ import {
 import { Switch } from "@/components/ui/switch"
 
 const meta = {
-  title: "Components/Switch",
+  title: "Components/Forms/Switch",
   component: Switch,
   parameters: {
     docs: {

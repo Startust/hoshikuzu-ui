@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/chart"
 
 const meta = {
-  title: "Components/Chart",
+  title: "Components/Data Display/Chart",
   component: ChartContainer,
   parameters: {
     docs: {
