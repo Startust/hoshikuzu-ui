@@ -93,7 +93,7 @@ export const AsLink: Story = {
     <Button
       variant="outline"
       nativeButton={false}
-      render={<a href="https://github.com/yihuil1992/hoshikuzu-ui" />}
+      render={<a href="https://github.com/Startust/hoshikuzu-ui" />}
     >
       Repository
       <ArrowUpRightIcon data-icon="inline-end" />

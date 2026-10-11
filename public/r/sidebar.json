@@ -9,14 +9,14 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "https://yihuil1992.github.io/hoshikuzu-ui/r/hoshikuzu-theme.json",
-    "https://yihuil1992.github.io/hoshikuzu-ui/r/button.json",
-    "https://yihuil1992.github.io/hoshikuzu-ui/r/input.json",
-    "https://yihuil1992.github.io/hoshikuzu-ui/r/separator.json",
-    "https://yihuil1992.github.io/hoshikuzu-ui/r/sheet.json",
-    "https://yihuil1992.github.io/hoshikuzu-ui/r/skeleton.json",
-    "https://yihuil1992.github.io/hoshikuzu-ui/r/tooltip.json",
-    "https://yihuil1992.github.io/hoshikuzu-ui/r/use-mobile.json"
+    "https://startust.github.io/hoshikuzu-ui/r/hoshikuzu-theme.json",
+    "https://startust.github.io/hoshikuzu-ui/r/button.json",
+    "https://startust.github.io/hoshikuzu-ui/r/input.json",
+    "https://startust.github.io/hoshikuzu-ui/r/separator.json",
+    "https://startust.github.io/hoshikuzu-ui/r/sheet.json",
+    "https://startust.github.io/hoshikuzu-ui/r/skeleton.json",
+    "https://startust.github.io/hoshikuzu-ui/r/tooltip.json",
+    "https://startust.github.io/hoshikuzu-ui/r/use-mobile.json"
   ],
   "files": [
     {

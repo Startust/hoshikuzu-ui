@@ -7,9 +7,9 @@
     "cn"
   ],
   "registryDependencies": [
-    "https://yihuil1992.github.io/hoshikuzu-ui/r/hoshikuzu-theme.json",
-    "https://yihuil1992.github.io/hoshikuzu-ui/r/label.json",
-    "https://yihuil1992.github.io/hoshikuzu-ui/r/separator.json"
+    "https://startust.github.io/hoshikuzu-ui/r/hoshikuzu-theme.json",
+    "https://startust.github.io/hoshikuzu-ui/r/label.json",
+    "https://startust.github.io/hoshikuzu-ui/r/separator.json"
   ],
   "files": [
     {

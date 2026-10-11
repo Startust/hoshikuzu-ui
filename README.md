@@ -10,8 +10,8 @@ which is the primary source, plus two projects that adopted its language:
 (`base-nova`, shadcn's current default), with a Storybook published to
 GitHub Pages.
 
-- Storybook: https://yihuil1992.github.io/hoshikuzu-ui/storybook/
-- Registry: https://yihuil1992.github.io/hoshikuzu-ui/r/registry.json
+- Storybook: https://startust.github.io/hoshikuzu-ui/storybook/
+- Registry: https://startust.github.io/hoshikuzu-ui/r/registry.json
 
 ## Install
 
@@ -20,10 +20,10 @@ GitHub Pages.
 npx shadcn@latest init -b base
 
 # 2. The theme (night atlas + archive sheet tokens, type, motion, utilities)
-npx shadcn@latest add https://yihuil1992.github.io/hoshikuzu-ui/r/hoshikuzu-theme.json
+npx shadcn@latest add https://startust.github.io/hoshikuzu-ui/r/hoshikuzu-theme.json
 
 # 3. Components
-npx shadcn@latest add https://yihuil1992.github.io/hoshikuzu-ui/r/button.json
+npx shadcn@latest add https://startust.github.io/hoshikuzu-ui/r/button.json
 ```
 
 Or register the namespace once in `components.json`:
@@ -31,7 +31,7 @@ Or register the namespace once in `components.json`:
 ```json
 {
   "registries": {
-    "@hoshikuzu": "https://yihuil1992.github.io/hoshikuzu-ui/r/{name}.json"
+    "@hoshikuzu": "https://startust.github.io/hoshikuzu-ui/r/{name}.json"
   }
 }
 ```

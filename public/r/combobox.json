@@ -8,9 +8,9 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "https://yihuil1992.github.io/hoshikuzu-ui/r/hoshikuzu-theme.json",
-    "https://yihuil1992.github.io/hoshikuzu-ui/r/button.json",
-    "https://yihuil1992.github.io/hoshikuzu-ui/r/input-group.json"
+    "https://startust.github.io/hoshikuzu-ui/r/hoshikuzu-theme.json",
+    "https://startust.github.io/hoshikuzu-ui/r/button.json",
+    "https://startust.github.io/hoshikuzu-ui/r/input-group.json"
   ],
   "files": [
     {

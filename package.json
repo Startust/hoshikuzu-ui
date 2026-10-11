@@ -64,7 +64,7 @@
   "packageManager": "pnpm@10.33.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yihuil1992/hoshikuzu-ui.git"
+    "url": "https://github.com/Startust/hoshikuzu-ui.git"
   },
-  "homepage": "https://yihuil1992.github.io/hoshikuzu-ui"
+  "homepage": "https://startust.github.io/hoshikuzu-ui"
 }

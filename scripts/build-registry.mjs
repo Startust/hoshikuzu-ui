@@ -19,7 +19,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..")
 const pkg = JSON.parse(readFileSync(join(ROOT, "package.json"), "utf8"))
 
 export const REGISTRY_URL =
-  process.env.REGISTRY_URL ?? "https://yihuil1992.github.io/hoshikuzu-ui/r"
+  process.env.REGISTRY_URL ?? "https://startust.github.io/hoshikuzu-ui/r"
 
 const itemUrl = (name) => `${REGISTRY_URL}/${name}.json`
 const posix = (p) => p.split("\\").join("/")
@@ -207,7 +207,7 @@ for (const item of items) {
 const registry = {
   $schema: "https://ui.shadcn.com/schema/registry.json",
   name: "hoshikuzu",
-  homepage: "https://yihuil1992.github.io/hoshikuzu-ui",
+  homepage: "https://startust.github.io/hoshikuzu-ui",
   items,
 }
 

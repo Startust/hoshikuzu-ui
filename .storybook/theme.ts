@@ -4,7 +4,7 @@ import { create } from "storybook/theming"
 export const atlasDocsTheme = create({
   base: "dark",
   brandTitle: "Hoshikuzu UI",
-  brandUrl: "https://github.com/yihuil1992/hoshikuzu-ui",
+  brandUrl: "https://github.com/Startust/hoshikuzu-ui",
   brandTarget: "_blank",
 
   colorPrimary: "#f5f0dc",
