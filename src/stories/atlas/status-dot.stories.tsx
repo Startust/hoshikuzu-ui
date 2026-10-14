@@ -9,14 +9,14 @@ const meta = {
     docs: {
       description: {
         component:
-          "Points of light for readiness and state. `live` adds a slow halo for something actively happening, such as recording. Always pair a dot with words or a `label`.",
+          'Points of light for readiness and state. Lit dots glow softly; `idle` is a hollow, unlit ring. `star` is plain "on" (starlight at night, ink teal on the archive sheet); the other tones carry meaning. `live` adds a slow halo for something actively happening, such as recording. Always pair a dot with words or a `label`.',
       },
     },
   },
   argTypes: {
     tone: {
       control: "select",
-      options: ["signal", "success", "warning", "destructive", "idle"],
+      options: ["star", "signal", "success", "warning", "destructive", "idle"],
     },
     size: { control: "inline-radio", options: ["sm", "default", "lg"] },
     live: { control: "boolean" },
@@ -32,6 +32,7 @@ export const Playground: Story = {}
 export const Indicators: Story = {
   render: () => (
     <div className="grid gap-3">
+      <StatusIndicator tone="star">Desk lamp on</StatusIndicator>
       <StatusIndicator tone="signal">Microphone ready</StatusIndicator>
       <StatusIndicator tone="success">Summary saved</StatusIndicator>
       <StatusIndicator tone="warning">Model setup needed</StatusIndicator>

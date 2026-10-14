@@ -12,7 +12,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "A thin hairline track with a signal range and a small starlight thumb. Use it for continuous values where the exact number matters less than the position, such as magnitude limits or playback speed.",
+          "A hairline scale with an inked range and a small square index. Use it for continuous values where the position matters more than the exact number, such as magnitude limits or volume. Pass ticks to draw a calibration ruler under it.",
       },
     },
   },
@@ -68,6 +68,33 @@ function MagnitudeRange() {
 
 export const Range: Story = {
   render: () => <MagnitudeRange />,
+}
+
+function VolumeReadout() {
+  const [volume, setVolume] = useState(36)
+  return (
+    <div className="grid gap-1">
+      <div className="flex items-baseline justify-between">
+        <Label>Volume</Label>
+        <span className="text-sm text-foreground tabular-nums">
+          {volume}
+          <span className="ml-1 text-2xs tracking-[0.14em] text-faint-foreground">
+            %
+          </span>
+        </span>
+      </div>
+      <Slider
+        value={[volume]}
+        onValueChange={(value) => setVolume((value as number[])[0])}
+        ticks={20}
+        aria-label="Volume"
+      />
+    </div>
+  )
+}
+
+export const WithTicks: Story = {
+  render: () => <VolumeReadout />,
 }
 
 export const Vertical: Story = {

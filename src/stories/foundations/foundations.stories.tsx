@@ -30,16 +30,22 @@ const SURFACES: Swatch[] = [
 
 const INK: Swatch[] = [
   { token: "--foreground", name: "Starlight", role: "Primary text" },
-  { token: "--muted-foreground", name: "Muted starlight", role: "Body, helpers" },
+  {
+    token: "--muted-foreground",
+    name: "Muted starlight",
+    role: "Body, helpers",
+  },
   { token: "--faint-foreground", name: "Faint starlight", role: "Metadata" },
-  { token: "--border", name: "Hairline", role: "Rules, borders" },
-  { token: "--border-strong", name: "Strong hairline", role: "Hover, selected" },
+  { token: "--border-faint", name: "Faint hairline", role: "Rows in a panel" },
+  { token: "--border", name: "Hairline", role: "Frames, rules" },
+  { token: "--border-strong", name: "Strong hairline", role: "Hover, pressed" },
   { token: "--input", name: "Field line", role: "Inputs" },
 ]
 
 const SIGNALS: Swatch[] = [
   { token: "--primary", name: "Soft amber lamp", role: "Decisive action" },
   { token: "--signal", name: "Pale cyan signal", role: "Focus, selection" },
+  { token: "--star", name: "Star", role: "A lit object" },
   { token: "--success", name: "Success", role: "Done, sent" },
   { token: "--warning", name: "Warning", role: "Setup, caution" },
   { token: "--destructive", name: "Destructive", role: "Failure, delete" },
@@ -112,7 +118,9 @@ const TYPE_SCALE = [
     role: "Headline",
     spec: "300 · 1.125rem · 1.25",
     use: "Dialog and sheet titles",
-    sample: <p className="text-lg leading-tight font-light">Archive this meeting?</p>,
+    sample: (
+      <p className="text-lg leading-tight font-light">Archive this meeting?</p>
+    ),
   },
   {
     role: "Title",
@@ -230,9 +238,21 @@ export const ShapeAndElevation: Story = {
 }
 
 const MOTION = [
-  { name: "ease-out-quint", value: "cubic-bezier(0.22, 1, 0.36, 1)", use: "Hover, focus, color" },
-  { name: "ease-out-expo", value: "cubic-bezier(0.16, 1, 0.3, 1)", use: "Overlay entrances" },
-  { name: "ease-out-quart", value: "cubic-bezier(0.25, 1, 0.5, 1)", use: "Ambient loops" },
+  {
+    name: "ease-out-quint",
+    value: "cubic-bezier(0.22, 1, 0.36, 1)",
+    use: "Hover, focus, color",
+  },
+  {
+    name: "ease-out-expo",
+    value: "cubic-bezier(0.16, 1, 0.3, 1)",
+    use: "Overlay entrances",
+  },
+  {
+    name: "ease-out-quart",
+    value: "cubic-bezier(0.25, 1, 0.5, 1)",
+    use: "Ambient loops",
+  },
 ]
 
 export const Motion: Story = {
@@ -245,7 +265,9 @@ export const Motion: Story = {
             key={curve.name}
             className="group grid items-center gap-3 bg-card p-4 sm:grid-cols-[12rem_minmax(0,1fr)_14rem]"
           >
-            <code className="font-mono text-xs text-foreground">{curve.name}</code>
+            <code className="font-mono text-xs text-foreground">
+              {curve.name}
+            </code>
             <div className="relative h-6 border-b border-border">
               <span
                 className="absolute bottom-0 left-0 size-2 translate-y-1/2 rounded-full bg-signal transition-transform duration-700 group-hover:translate-x-[min(24rem,60vw)]"

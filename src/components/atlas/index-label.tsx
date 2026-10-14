@@ -76,7 +76,10 @@ function SectionRule({
       <Heading className="shrink-0 text-2xs leading-[1.2] font-semibold tracking-[0.22em] text-muted-foreground uppercase">
         {label}
       </Heading>
-      <span aria-hidden className="h-px flex-1 bg-border" />
+      <span
+        aria-hidden
+        className="h-px flex-1 bg-linear-to-r from-border via-border-faint to-transparent"
+      />
       {meta != null && (
         <span className="shrink-0 font-mono text-[0.6875rem] text-faint-foreground">
           {meta}

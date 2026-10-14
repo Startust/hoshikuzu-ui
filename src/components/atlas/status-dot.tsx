@@ -3,20 +3,22 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "cn"
 
 const statusDotVariants = cva(
-  "relative inline-block shrink-0 rounded-full bg-current",
+  "relative inline-block shrink-0 rounded-full bg-current shadow-glow",
   {
     variants: {
       tone: {
+        star: "text-star",
         signal: "text-signal",
         success: "text-success",
         warning: "text-warning",
         destructive: "text-destructive",
-        idle: "text-faint-foreground",
+        // An unlit star: a hollow ring, no halo.
+        idle: "border border-current bg-transparent text-faint-foreground shadow-none",
       },
       size: {
-        sm: "size-1.5",
-        default: "size-2",
-        lg: "size-2.5",
+        sm: "size-1",
+        default: "size-[5px]",
+        lg: "size-2",
       },
       live: {
         true: "animate-atlas-pulse",
@@ -32,8 +34,10 @@ const statusDotVariants = cva(
 )
 
 /**
- * A small point of light for readiness and state. Color is never the only
- * signal: pair it with text, or pass `label` so assistive tech hears it.
+ * A small point of light for readiness and state: lit objects glow softly,
+ * idle ones are hollow rings. `star` is plain "on"; the other tones carry
+ * meaning. Color is never the only signal: pair it with text, or pass
+ * `label` so assistive tech hears it.
  */
 function StatusDot({
   className,

@@ -9,7 +9,7 @@ function DataList({ className, ...props }: React.ComponentProps<"dl">) {
   return (
     <dl
       data-slot="data-list"
-      className={cn("grid border-b border-border text-sm", className)}
+      className={cn("grid text-sm", className)}
       {...props}
     />
   )
@@ -20,7 +20,7 @@ function DataListItem({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="data-list-item"
       className={cn(
-        "grid grid-cols-[minmax(7rem,auto)_minmax(0,1fr)_auto] items-center gap-x-4 border-t border-border py-2.5",
+        "grid min-h-11 grid-cols-[minmax(7rem,auto)_minmax(0,1fr)_auto] items-center gap-x-4 border-b border-border-faint py-2.5 last:border-b-0",
         className
       )}
       {...props}

@@ -31,7 +31,9 @@ Reference implementations: `button.tsx`, `badge.tsx`, `input.tsx`, `card.tsx`,
 | Hover / highlighted item / selected row | `bg-accent text-accent-foreground` (a faint signal wash, never a solid fill) |
 | Decisive action (one per surface) | `bg-primary text-primary-foreground`, hover `bg-primary-hover` |
 | Signal (focus, selection, readiness) | `text-signal`, `bg-signal`, `border-signal`, `ring-ring` |
-| Hairlines | `border-border`; brightened/active: `border-border-strong` |
+| Hairlines | `border-border` (frames); `border-border-faint` (rows inside a panel); `border-border-strong` (hovered or pressed instrument, neutral) |
+| Lit object (on, chosen) | `text-star bg-current shadow-glow` (status dots, radio star) |
+| Glow | `shadow-glow`: a short halo in `currentColor`. Lit objects only, never panels, text or buttons |
 | Field border | `border-input` |
 | Body text / secondary / tertiary | `text-foreground` / `text-muted-foreground` / `text-faint-foreground` |
 | Status | `text-{success,warning,info,destructive}` + `bg-{tone}-surface` + `border-{tone}-border` |
@@ -43,8 +45,9 @@ Reference implementations: `button.tsx`, `badge.tsx`, `input.tsx`, `card.tsx`,
 - Radius tokens are remapped: `rounded-sm|md|lg` = 2px, `rounded-xl` = 4px.
   Prefer `rounded-sm` for controls and panels, `rounded-xs` (1px) for items
   nested inside a padded container (menu items, segments).
-- `rounded-full` only for: switches, avatars, radio dots, status dots,
-  `pill` chips, slider thumbs.
+- `rounded-full` only for: avatars, radios and their dots, status dots and
+  `pill` chips. Switches, switch indicators, slider thumbs, progress bars and
+  scrollbar thumbs are square (`rounded-xs` or `rounded-[1px]`).
 - Replace `ring-1 ring-foreground/10` surfaces with `border border-border`.
 - Remove nested `rounded-t-xl` / `rounded-b-xl` decorations.
 
@@ -61,7 +64,8 @@ Reference implementations: `button.tsx`, `badge.tsx`, `input.tsx`, `card.tsx`,
   `text-sm text-foreground` for values and item text. Never add letter
   spacing to body text.
 - **Panel / dialog title**: `text-lg font-light leading-tight` (dialogs, sheets,
-  drawers) or `text-sm font-semibold tracking-[0.08em]` (cards, compact panels).
+  drawers) or `text-sm font-semibold tracking-[0.14em] uppercase` (cards,
+  compact panels; short names only).
 - **Display** (page heroes only, not inside components): `font-light`.
 - Mono for timestamps, paths, IDs, numeric readouts: `font-mono text-xs`.
 
@@ -76,10 +80,20 @@ Reference implementations: `button.tsx`, `badge.tsx`, `input.tsx`, `card.tsx`,
   (soft, localized; never a saturated glow).
 - Disabled: `disabled:opacity-45` (or `data-disabled:opacity-45`), layout
   unchanged.
-- Checked/selected controls (checkbox, radio, switch, toggle on): use
-  `primary` fill for checkbox and switch, `signal` for radio dots and
-  slider range, and `bg-surface-raised border-border-strong text-foreground`
-  for pressed toggles. No saturated fills.
+- Controls follow the instrument grammar (see DESIGN.md, Instruments):
+  - Checked checkbox / switch frame: `border-signal/55–60 bg-signal/8–10`;
+    the check or indicator in `foreground`. Never a solid `primary` fill.
+  - Radio: `border-signal/60`, the dot `text-star bg-current shadow-glow`.
+  - Switch indicator: square, `bg-faint-foreground` off, `bg-foreground
+    text-signal shadow-glow` on.
+  - Slider: `h-px` track in `bg-border`, range in `bg-foreground`, 11px square
+    hollow thumb (`border-foreground bg-card`); optional `ticks` ruler.
+  - Pressed toggles, active tab keys, current modes:
+    `border-foreground/55 text-foreground`, no fill. Tabs and toggle groups
+    have no tray; keys sit `gap-1.5` apart.
+  - Outline buttons: `bg-transparent text-muted-foreground`, press feedback
+    `active:border-signal active:bg-signal/10`.
+- Icons inside buttons, toggles and tabs use `stroke-[1.5]`.
 
 ## Overlays (menus, popovers, select, combobox, tooltip, hover card, toasts)
 

@@ -19,9 +19,10 @@ const ToggleGroupContext = React.createContext<
 })
 
 /**
- * The default variant reads as a segmented control: one hairline container,
- * the pressed segment lifted onto a raised surface. `variant="outline"` keeps
- * shadcn's separate bordered toggles (joined when `spacing={0}`).
+ * The default variant reads as an instrument's mode buttons: compact
+ * hairline keys a few pixels apart, the active one framed in ink. No tray,
+ * no lifted segment. `variant="outline"` keeps shadcn's full-height bordered
+ * toggles (joined when `spacing={0}`).
  */
 function ToggleGroup({
   className,
@@ -37,7 +38,7 @@ function ToggleGroup({
     orientation?: "horizontal" | "vertical"
   }) {
   const groupVariant = variant ?? "default"
-  const resolvedSpacing = spacing ?? (groupVariant === "outline" ? 2 : 0.5)
+  const resolvedSpacing = spacing ?? (groupVariant === "outline" ? 2 : 1.5)
 
   return (
     <ToggleGroupPrimitive
@@ -49,7 +50,6 @@ function ToggleGroup({
       style={{ "--gap": resolvedSpacing } as React.CSSProperties}
       className={cn(
         "group/toggle-group flex w-fit flex-row items-center gap-[--spacing(var(--gap))] rounded-sm data-vertical:flex-col data-vertical:items-stretch",
-        "data-[variant=default]:border data-[variant=default]:border-border data-[variant=default]:bg-card/40 data-[variant=default]:p-[3px]",
         className
       )}
       {...props}
@@ -86,8 +86,8 @@ function ToggleGroupItem({
           variant: context.variant || variant,
           size: context.size || size,
         }),
-        // Segmented control: segments sit inside the 3px-padded container.
-        "group-data-[variant=default]/toggle-group:h-7 group-data-[variant=default]/toggle-group:min-w-7 group-data-[variant=default]/toggle-group:rounded-xs group-data-[variant=default]/toggle-group:not-data-pressed:hover:bg-transparent group-data-[variant=default]/toggle-group:data-pressed:border-border group-data-[variant=default]/toggle-group:data-[size=sm]:h-6 group-data-[variant=default]/toggle-group:data-[size=sm]:min-w-6 group-data-[variant=default]/toggle-group:data-[size=lg]:h-8 group-data-[variant=default]/toggle-group:data-[size=lg]:min-w-8 group-data-vertical/toggle-group:justify-start",
+        // Mode keys: compact hairline toggles; ink frame when pressed.
+        "group-data-[variant=default]/toggle-group:h-7 group-data-[variant=default]/toggle-group:min-w-7 group-data-[variant=default]/toggle-group:px-2.5 group-data-[variant=default]/toggle-group:not-data-pressed:border-border group-data-vertical/toggle-group:justify-start group-data-[variant=default]/toggle-group:not-data-pressed:hover:border-border-strong group-data-[variant=default]/toggle-group:not-data-pressed:hover:bg-transparent group-data-[variant=default]/toggle-group:data-[size=lg]:h-8 group-data-[variant=default]/toggle-group:data-[size=lg]:min-w-8 group-data-[variant=default]/toggle-group:data-[size=sm]:h-6 group-data-[variant=default]/toggle-group:data-[size=sm]:min-w-6",
         className
       )}
       {...props}

@@ -26,7 +26,10 @@ function Measurement({
   )
 }
 
-function MeasurementIcon({ className, ...props }: React.ComponentProps<"span">) {
+function MeasurementIcon({
+  className,
+  ...props
+}: React.ComponentProps<"span">) {
   return (
     <span
       data-slot="measurement-icon"
@@ -53,11 +56,17 @@ function MeasurementValue({ className, ...props }: React.ComponentProps<"p">) {
   )
 }
 
-function MeasurementUnit({ className, ...props }: React.ComponentProps<"span">) {
+function MeasurementUnit({
+  className,
+  ...props
+}: React.ComponentProps<"span">) {
   return (
     <span
       data-slot="measurement-unit"
-      className={cn("text-sm font-normal text-muted-foreground", className)}
+      className={cn(
+        "text-2xs font-semibold tracking-[0.14em] text-faint-foreground uppercase",
+        className
+      )}
       {...props}
     />
   )
@@ -95,7 +104,7 @@ function MeasurementGrid({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="measurement-grid"
       className={cn(
-        "grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-4 *:data-[slot=measurement]:bg-card",
+        "grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-border bg-border *:data-[slot=measurement]:bg-card sm:grid-cols-4",
         className
       )}
       {...props}

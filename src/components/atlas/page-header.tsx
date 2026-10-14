@@ -18,7 +18,10 @@ function PageHeader({ className, ...props }: React.ComponentProps<"header">) {
   )
 }
 
-function PageHeaderHeading({ className, ...props }: React.ComponentProps<"div">) {
+function PageHeaderHeading({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="page-header-heading"
@@ -33,7 +36,7 @@ function PageHeaderEyebrow({ className, ...props }: React.ComponentProps<"p">) {
     <p
       data-slot="page-header-eyebrow"
       className={cn(
-        "text-2xs leading-[1.2] font-semibold tracking-[0.22em] text-muted-foreground uppercase",
+        "text-2xs leading-[1.2] font-semibold tracking-[0.22em] text-muted-foreground uppercase before:mb-4 before:block before:h-px before:w-20 before:bg-linear-to-r before:from-foreground/55 before:to-transparent",
         className
       )}
       {...props}
@@ -70,7 +73,10 @@ function PageHeaderDescription({
   )
 }
 
-function PageHeaderActions({ className, ...props }: React.ComponentProps<"div">) {
+function PageHeaderActions({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="page-header-actions"
