@@ -17,7 +17,7 @@ function RadioGroupItem({ className, ...props }: RadioPrimitive.Root.Props) {
     <RadioPrimitive.Root
       data-slot="radio-group-item"
       className={cn(
-        "group/radio-group-item peer relative flex aspect-square size-4 shrink-0 rounded-full border border-input bg-card/45 transition-[background-color,border-color,box-shadow] duration-150 ease-out-quint outline-none group-has-[:focus-visible]/field-label:ring-0 group-has-[:focus-visible]/field-label:not-data-checked:border-input after:absolute after:-inset-x-3 after:-inset-y-2 hover:border-border-strong focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/30 disabled:cursor-not-allowed disabled:opacity-45 data-disabled:cursor-not-allowed data-disabled:opacity-45 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/20 data-checked:border-signal group-has-[:focus-visible]/field-label:data-checked:border-signal",
+        "group/radio-group-item peer relative flex aspect-square size-4 shrink-0 rounded-full border border-input bg-transparent transition-[background-color,border-color,box-shadow] duration-150 ease-out-quint outline-none group-has-[:focus-visible]/field-label:ring-0 group-has-[:focus-visible]/field-label:not-data-checked:border-input after:absolute after:-inset-x-3 after:-inset-y-2 hover:border-border-strong focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/30 disabled:cursor-not-allowed disabled:opacity-45 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/20 data-checked:border-signal/60 group-has-[:focus-visible]/field-label:data-checked:border-signal/60 data-disabled:cursor-not-allowed data-disabled:opacity-45",
         className
       )}
       {...props}
@@ -26,7 +26,8 @@ function RadioGroupItem({ className, ...props }: RadioPrimitive.Root.Props) {
         data-slot="radio-group-indicator"
         className="flex size-4 items-center justify-center"
       >
-        <span className="absolute top-1/2 left-1/2 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-signal" />
+        {/* The chosen option lights up like a star. */}
+        <span className="absolute top-1/2 left-1/2 size-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-current text-star shadow-glow" />
       </RadioPrimitive.Indicator>
     </RadioPrimitive.Root>
   )

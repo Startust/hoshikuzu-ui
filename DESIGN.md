@@ -8,8 +8,10 @@ colors:
   starlight: "#f8fafc"
   starlight-muted: "#aeb8c7"
   starlight-faint: "#6f7b8d"
+  hairline-faint: "rgba(255,255,255,0.08)"
   hairline: "rgba(255,255,255,0.14)"
-  hairline-strong: "rgba(170,215,220,0.34)"
+  hairline-strong: "rgba(255,255,255,0.26)"
+  star: "rgba(248,250,252,0.88)"
   pale-cyan: "#aad7dc"
   soft-amber: "#f5f0dc"
   archive-background: "#f7f8f3"
@@ -39,7 +41,7 @@ typography:
     fontSize: "0.875rem"
     fontWeight: 600
     lineHeight: 1.25
-    letterSpacing: "0.08em"
+    letterSpacing: "0.14em"
   body:
     fontFamily: "Noto Sans JP, Hiragino Sans, Yu Gothic UI, Segoe UI, system-ui, sans-serif"
     fontSize: "0.875rem"
@@ -89,11 +91,23 @@ components:
     rounded: "{rounded.sm}"
     padding: "0 12px"
     height: "36px"
+  button-outline:
+    backgroundColor: "transparent"
+    textColor: "{colors.starlight-muted}"
+    typography: "{typography.label}"
+    rounded: "{rounded.sm}"
+    padding: "0 12px"
+    height: "36px"
+  switch:
+    backgroundColor: "transparent"
+    rounded: "{rounded.xs}"
+    width: "40px"
+    height: "22px"
   panel:
     backgroundColor: "{colors.ink-night}"
     textColor: "{colors.starlight}"
     rounded: "{rounded.sm}"
-    padding: "24px"
+    padding: "20px"
   star-panel:
     backgroundColor: "{colors.ink-night}"
     textColor: "{colors.starlight}"
@@ -123,7 +137,9 @@ deep-space canvas, warm starlight text, tracked index labels, hairline rules,
 2px corners. **note-taker** adapted it into a working console and contributed
 instrument patterns and the hard-surface rule. **review-pilot** adapted it to a
 mobile work queue and contributed semantic status tints, measurements and
-navigation.
+navigation. The **Home Atlas** dashboard (a Home Assistant card) contributed
+the instrument grammar for controls: square switches, ruled sliders, hairline
+mode keys, star-dot device states and room panels with tracked titles.
 
 **Key characteristics:**
 
@@ -132,6 +148,9 @@ navigation.
 - Small uppercase metadata labels with generous tracking. Body copy stays calm
   and normal case.
 - Thin rules, tick marks and pointer lines used as annotation, not decoration.
+- Controls are calibrated instruments: square switches, hairline scales with
+  rulers, mode keys framed in ink. Lit objects glow like stars; idle ones are
+  hollow.
 - Flat surfaces at rest. Elevation only for overlays and active objects.
 - Single-stage ease-out motion. No bounce, no choreography.
 
@@ -151,8 +170,12 @@ the stars: pale cyan and soft amber.
 - **Deep Space / Ink Night / Observatory Panel**: canvas, panels, secondary
   fills.
 - **Starlight / Muted / Faint**: primary text, body text, metadata.
-- **Hairline / Strong Hairline**: rules and borders; strong for hover and
-  selection.
+- **Faint / Hairline / Strong Hairline** (`--border-faint`, `--border`,
+  `--border-strong`): rows inside a panel; frames and rules; a hovered or
+  pressed instrument. Strong is a neutral brightening; selection is carried by
+  the signal (`signal/55` frame, 8–10% wash), never by a hairline alone.
+- **Star** (`--star`; archive `#477c86`): a lit object, such as a device
+  that is on or a chosen radio. Starlight at night, ink teal on paper.
 - **Status** (`success`, `warning`, `info`, `destructive`): each has a text
   color, a `-surface` tint and a `-border`. Use them for real operational
   state only.
@@ -166,6 +189,10 @@ annotations.
 **The Ten Percent Accent Rule.** Cyan and amber together stay under a tenth
 of any screen. If an accent is visible before the content is understood, it is
 too loud.
+
+**The Starlight Glow Rule.** Only lit objects glow: status dots, the chosen
+radio, a switch indicator that is on, the slider index. The halo (`shadow-glow`)
+is short and takes the object's own color. Panels, text and buttons never glow.
 
 **The Token Rule.** Components never hard-code colors. Both modes are the same
 semantic tokens under `data-atlas-mode`.
@@ -183,7 +210,8 @@ paths, IDs and readouts.
 
 - **Display** (300, `clamp(2rem, 4vw, 3rem)`, 1.05): page headers only.
 - **Headline** (300, 1.125rem): dialog, sheet and drawer titles.
-- **Title** (600, 0.875rem, tracking 0.08em): cards and compact panels.
+- **Title** (600, 0.875rem, tracking 0.14em, uppercase): cards and compact
+  panels. Keep card titles to a short name.
 - **Lead** (400, 0.9375rem, 1.6): the description under a page title.
 - **Body** (400, 0.875rem, 1.6): descriptions. Keep under 72ch.
 - **Control label** (600, 0.6875rem, tracking 0.14em, uppercase): form
@@ -216,6 +244,8 @@ Tonal layering and hairlines carry depth. Surfaces are flat at rest.
 - **Overlay** (`shadow-overlay`, `0 10px 14px`): menus, popovers, selects,
   dialogs, toasts.
 - **Panel** (`shadow-panel`, `0 12px 15px -4px`): the star panel over the sky.
+- **Glow** (`shadow-glow`, `0 0 10px` in the object's color; archive `0 0 6px`,
+  fainter): lit objects only. See the Starlight Glow Rule.
 
 ### Named Rules
 
@@ -234,22 +264,44 @@ over a moving starfield (`translucent`). Modal backdrops are a flat scrim.
 ### Buttons
 
 - **Shape:** 2px corners; heights 28/32/36/40/48px.
-- **Label:** index voice, `text-xs` tracked uppercase.
+- **Label:** index voice, 10px (`text-2xs`) tracked uppercase. Icons use a
+  1.5 stroke.
 - **Primary:** amber lamp fill; hover brightens and lifts with the control
   shadow.
-- **Outline / Secondary / Ghost:** hairline or transparent; hover brightens
-  the hairline and text.
+- **Outline:** the instrument key. Transparent, hairline, muted label; hover
+  brightens hairline and label; pressing flashes the signal frame and wash;
+  `aria-pressed` frames it in ink.
+- **Secondary / Ghost:** raised fill or transparent; hover brightens.
 - **Destructive:** quiet tint with a destructive hairline, not a red slab.
+
+### Instruments
+
+- **Switch:** a 40×22 square frame (32×18 small) with a square indicator. Off,
+  the indicator rests faint at the left; on, the frame takes the signal and a
+  faint wash, and the indicator slides right in starlight with a glow.
+- **Checkbox:** square hairline; checked takes the signal frame and wash with
+  an ink check. No solid fill.
+- **Radio:** round hairline; the chosen option holds a small glowing star.
+- **Slider:** a 1px scale, the filled range in ink, an 11px square hollow
+  index. `ticks` adds a ruler with every fifth mark longer.
+- **Progress:** a 2px square track (1px small) with a signal bar.
+- **Tabs and toggle groups:** mode keys, not a tray. Separate hairline keys
+  6px apart; the active key is framed in ink (`foreground/55`), never filled.
+  Line tabs mark the active tab with a 1px signal line.
 
 ### Chips and badges
 
-Catalog tags, not SaaS pills: tinted surface, matching hairline, tracked label.
+Catalog tags, not SaaS pills: hairline, tracked label. The default tag has no
+fill; status tags take their tone's surface and hairline.
 `shape="pill"` exists for counts and filters (review-pilot chips).
 
 ### Cards and panels
 
-2px corners, hairline border, `bg-card/80`, no shadow. 24px internal spacing
-(16px for `size="sm"`). `interactive` brightens the hairline on hover.
+2px corners, hairline border, `bg-card/80`, no shadow. 20px internal spacing
+(16px for `size="sm"`). Titles are short tracked uppercase names; a faint
+index label above works as a kicker, and a count can sit in `CardAction`.
+Rows inside use faint hairlines. `interactive` tints the frame with the signal
+on hover.
 
 ### Inputs and fields
 
@@ -274,10 +326,13 @@ thick side stripe or a filled slab.
 - **Star Panel:** the signature mapped-object panel. Catalog label, tracked
   title, two lines of description, one action, optional connector.
 - **Measurement:** light numerals over a tracked label, laid on a hairline grid.
-- **Status Dot / Indicator:** small points of light; `live` adds a slow halo.
-- **Data List:** label, mono value, status aside, hairline rows.
+- **Status Dot / Indicator:** 5px points of light. Lit tones glow; `idle` is
+  a hollow ring; `star` is plain "on"; `live` adds a slow halo.
+- **Data List:** label, mono value, status aside, faint hairline rows.
 - **Timeline:** mono time column with an active line.
-- **Section Rule:** label, hairline to the edge, trailing metadata.
+- **Section Rule:** label, a hairline fading toward the edge, trailing
+  metadata.
+- **Page Header:** the eyebrow sits under an 80px rule that fades out.
 - **Atlas Mode:** provider, toggle and pre-hydration script.
 - **Starfield:** star dots at night, graticule on the archive sheet.
 
@@ -300,4 +355,6 @@ thick side stripe or a filled slab.
 - **Don't** use glassmorphism, bokeh, gradient washes or decorative glow.
 - **Don't** pair a hairline border with a wide diffuse shadow.
 - **Don't** mark selection with thick side stripes; use the 1px signal marker.
+- **Don't** fall back to stock shadcn shapes: pill switches, round white
+  slider knobs, solid-filled checkboxes, tabs in a tray with a lifted segment.
 - **Don't** let the UI compete with the content it annotates.

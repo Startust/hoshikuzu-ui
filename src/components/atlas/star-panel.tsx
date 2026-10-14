@@ -40,7 +40,7 @@ function StarPanel({
               : "left-full flex-row-reverse"
           )}
         >
-          <span className="size-1.5 shrink-0 rounded-full bg-signal" />
+          <span className="size-[5px] shrink-0 rounded-full bg-current text-signal shadow-glow" />
           <span className="h-px flex-1 bg-border-strong" />
         </span>
       )}
@@ -82,7 +82,10 @@ function StarPanelDescription({
   return (
     <p
       data-slot="star-panel-description"
-      className={cn("mt-3 text-xs leading-relaxed text-muted-foreground", className)}
+      className={cn(
+        "mt-3 text-xs leading-relaxed text-muted-foreground",
+        className
+      )}
       {...props}
     />
   )
@@ -94,7 +97,7 @@ function StarPanelMeta({ className, ...props }: React.ComponentProps<"dl">) {
     <dl
       data-slot="star-panel-meta"
       className={cn(
-        "mt-3 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 border-t border-border pt-3 text-[0.6875rem] *:[dt]:font-semibold *:[dt]:tracking-[0.12em] *:[dt]:text-faint-foreground *:[dt]:uppercase *:[dd]:truncate *:[dd]:text-right *:[dd]:font-mono *:[dd]:text-muted-foreground",
+        "mt-3 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 border-t border-border pt-3 text-[0.6875rem] *:[dd]:truncate *:[dd]:text-right *:[dd]:font-mono *:[dd]:text-muted-foreground *:[dt]:font-semibold *:[dt]:tracking-[0.12em] *:[dt]:text-faint-foreground *:[dt]:uppercase",
         className
       )}
       {...props}
@@ -102,7 +105,10 @@ function StarPanelMeta({ className, ...props }: React.ComponentProps<"dl">) {
   )
 }
 
-function StarPanelActions({ className, ...props }: React.ComponentProps<"div">) {
+function StarPanelActions({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="star-panel-actions"

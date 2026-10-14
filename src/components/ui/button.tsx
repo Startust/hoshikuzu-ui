@@ -3,18 +3,18 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "cn"
 
 const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center rounded-sm border border-transparent bg-clip-padding text-xs font-semibold tracking-[0.16em] whitespace-nowrap uppercase transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-150 ease-out-quint outline-none select-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/30 active:not-aria-[haspopup]:scale-[0.985] disabled:pointer-events-none disabled:opacity-45 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/20 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "group/button inline-flex shrink-0 items-center justify-center rounded-sm border border-transparent bg-clip-padding text-2xs font-semibold tracking-[0.16em] whitespace-nowrap uppercase transition-[color,background-color,border-color,box-shadow,opacity,transform] duration-150 ease-out-quint outline-none select-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/30 active:not-aria-[haspopup]:scale-[0.985] disabled:pointer-events-none disabled:opacity-45 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/20 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:stroke-[1.5] [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
         default:
           "border-primary/80 bg-primary text-primary-foreground hover:border-primary-hover hover:bg-primary-hover hover:shadow-control",
         outline:
-          "border-border bg-card/40 text-foreground hover:border-border-strong hover:bg-surface-raised aria-expanded:border-border-strong aria-expanded:bg-surface-raised",
+          "border-border bg-transparent text-muted-foreground hover:border-border-strong hover:text-foreground active:border-signal active:bg-signal/10 active:text-foreground aria-expanded:border-border-strong aria-expanded:text-foreground aria-pressed:border-foreground/55 aria-pressed:text-foreground",
         secondary:
-          "border-border bg-secondary text-secondary-foreground hover:border-border-strong aria-expanded:border-border-strong",
+          "border-border bg-surface-raised text-foreground hover:border-border-strong active:border-signal aria-expanded:border-border-strong",
         ghost:
-          "text-muted-foreground hover:bg-accent hover:text-foreground aria-expanded:bg-accent aria-expanded:text-foreground",
+          "text-muted-foreground hover:bg-accent hover:text-foreground active:bg-signal/10 aria-expanded:bg-accent aria-expanded:text-foreground",
         destructive:
           "border-destructive-border bg-destructive-surface text-destructive hover:border-destructive/70 hover:bg-destructive/20 focus-visible:border-destructive/60 focus-visible:ring-destructive/25",
         link: "h-auto! border-0 px-0! text-muted-foreground underline-offset-4 hover:text-foreground hover:underline",
